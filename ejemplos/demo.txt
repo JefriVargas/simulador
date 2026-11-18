@@ -1,0 +1,30 @@
+# Ejecutar desde la carpeta Simulador: python -m rv32i --script ejemplos/demo.txt
+load ejemplos/basico.bin
+pc
+regs x5 x8
+mem 0x64 0x67
+step
+step
+step
+step
+step
+regs x5 x6 x7 x8
+mem 0x64 0x67
+pc
+
+load ejemplos/riscvtest.bin
+run 500 0x50
+words 0x64 1
+
+load ejemplos/quicksort.bin
+run 16
+words 0x1000 7
+run 5000 0x50
+words 0x1000 7
+
+load ejemplos/arbol.bin
+run 16
+words 0x1000 7
+run 5000 0x4C
+regs a0 sp
+exit
